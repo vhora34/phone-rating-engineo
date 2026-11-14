@@ -4,9 +4,12 @@ from lookup import find_specs, extract_attributes, estimate_scores
 from evidence import load_evidence, evidence_for, summarize
 from ownership import profiles, capacity_scenarios
 from youtube_reviews import find_review_videos, get_public_comments, YouTubeError
+from source_lookup import source_page, search_links, model_tokens_present
+from specs_catalog import find_catalog_phone, is_future_release
+from historical_catalog import find_historical_models
 
-st.set_page_config(page_title='Phone Rating Engine v3', page_icon='📱', layout='wide')
-st.title('📱 Phone Rating Engine v3')
+st.set_page_config(page_title='Phone Rating Engine v5', page_icon='📱', layout='wide')
+st.title('📱 Phone Rating Engine v5')
 st.caption('Hardware ratings + buyer fit + battery ageing scenarios + source-linked real-world reviews. Estimates are labelled; missing evidence is never invented.')
 
 @st.cache_data(ttl=604800, show_spinner=False)
@@ -135,28 +138,85 @@ if submitted:
             st.write(f"**Most suitable buyer (by profile weights):** {profiles(scores)[0][0]}")
             st.caption('Specs are curated descriptions; verify regional variants and software commitments with manufacturer sources before purchasing.')
     else:
-        st.info('Model not in curated database. Attempting Wikipedia lookup...')
+        catalog_matches = find_catalog_phone(model)
+        if catalog_matches:
+            st.subheader('Supplied specification catalog')
+            st.info('These specifications come from uploaded CSV files. They have not been independently verified and do not establish camera quality, gaming FPS, reliability or long-term battery health.')
+            if len(catalog_matches) > 1:
+                st.warning('Multiple catalog records match this phone. They may describe different releases or contain conflicting specifications; compare before relying on them.')
+            for row in catalog_matches:
+                with st.expander(f"{row['brand']} {row['model']} · {row['_source_file']}", expanded=True):
+                    if is_future_release(row):
+                        st.warning('The listed release month is in the future. Treat these specifications as unconfirmed until verified against official announcements.')
+                    for label, key in [('Listed release month','release_month'), ('Operating system','os'), ('Processor','processor'), ('RAM variants (GB)','ram_gb'), ('Storage variants (GB)','storage_gb'), ('Display size (inches)','display_size_in'), ('Display','display_type'), ('Rear cameras','rear_camera'), ('Front camera','front_camera'), ('Battery capacity (mAh)','battery_mah'), ('Charging','charging_w'), ('Listed launch price (INR)','launch_price_inr')]:
+                        st.write(f"**{label}:** {row.get(key) or 'Not provided'}")
+                    st.caption('The listed launch price is not a current market price. RAM/storage options must be confirmed for your region. No full score is generated from this CSV alone.')
+        else:
+            historical_matches = find_historical_models(model)
+            if historical_matches:
+                st.subheader('Historical model-name catalog')
+                st.warning('These are model-name matches only, NOT verified specifications or ratings. Confirm the exact regional model before buying.')
+                for candidate in historical_matches:
+                    st.write(f"• {candidate['full_name']} — specifications not yet verified")
+            else:
+                st.info('No exact match in the uploaded specification catalog. Checking Wikipedia or an official manufacturer page.')
+        st.info('Searching Wikipedia; if unavailable, use a verified manufacturer page.')
         try:
             result = lookup(model)
-        except Exception as e:
-            st.error(f'Lookup failed: {e}')
+        except Exception as exc:
+            st.warning(f'Wikipedia lookup unavailable: {exc}')
             result = None
         if not result:
-            st.warning('No confident model match. No rating generated.')
+            st.warning('No confident Wikipedia match. This does not mean the phone does not exist.')
             if suggestions:
-                st.write('Did you mean:', ', '.join(suggestions))
-        else:
-            st.subheader('Possible match: ' + result['title'])
-            st.link_button('Check Wikipedia source and model identity', result['url'])
-            st.warning('Confirm exact regional variant. Preliminary heuristics are NOT a full phone rating.')
+                st.write('Similar curated names:', ', '.join(suggestions))
+        st.markdown('#### Discover trustworthy specifications')
+        for label, url in search_links(model).items():
+            st.link_button(label, url)
+        source_url = st.text_input('Optional: paste the official manufacturer specification page URL', key='manufacturer_url', placeholder='https://www.brand.com/...')
+        if source_url:
+            if st.button('Read specification page', key='read_specs'):
+                try:
+                    st.session_state['source_result'] = source_page(source_url)
+                    st.session_state['source_model'] = model
+                except Exception as exc:
+                    st.error(f'Could not read page: {exc}')
+        if st.session_state.get('source_model') == model and st.session_state.get('source_result'):
+            result = st.session_state['source_result']
+            if not model_tokens_present(model, result['title'] + ' ' + result['text'][:6000]):
+                st.error('Model name not clearly found on source page. Verify the exact model and variant; no score is inferred.')
+                result = None
+        if result:
+            st.subheader('Source: ' + result['title'])
+            st.link_button('Open source and confirm exact variant', result['url'])
+            st.warning('Source-derived specifications are unverified until you confirm the exact model and regional variant. Ratings below are partial heuristics, not measured tests.')
             attrs = extract_attributes(result)
-            for label, key in [('Chipset','chipset'),('Battery (mAh)','battery_mah'),('Display','display'),('Camera','camera'),('Weight','weight'),('OS','os')]:
+            for label, key in [('Chipset','chipset'),('Battery capacity (mAh)','battery_mah'),('Display','display'),('Camera hardware','camera'),('Weight','weight'),('OS','os')]:
                 if attrs[key]:
                     st.write(f'**{label}:** {attrs[key]}')
             partial = estimate_scores(attrs, ram, storage, price or None)
             for k in CATEGORIES:
-                st.write(f'**{LABELS[k]}:** ' + (f'{partial[k]:.1f}/10 (rough estimate)' if partial[k] is not None else 'Not enough evidence'))
-            st.info('No overall score or review sentiment is produced for an unverified model.')
+                st.write(f'**{LABELS[k]}:** ' + (f'{partial[k]:.1f}/10 (rough heuristic)' if partial[k] is not None else 'Insufficient evidence'))
+            st.info('No full overall score is generated for an unverified model. Battery capacity is not measured endurance, and chipset tiers are not sustained-performance benchmarks.')
+        st.markdown('#### Live YouTube review discovery for this model')
+        youtube_key = st.secrets.get('YOUTUBE_API_KEY', '')
+        if not youtube_key:
+            st.warning('Set YOUTUBE_API_KEY in Streamlit Secrets to enable live video search.')
+        elif st.button('Find YouTube reviews', key='unknown_youtube'):
+            try:
+                st.session_state['unknown_videos'] = youtube_search_cached(model, youtube_key)
+                st.session_state['unknown_video_model'] = model
+            except YouTubeError as exc:
+                st.error(str(exc))
+        if st.session_state.get('unknown_video_model') == model:
+            videos = st.session_state.get('unknown_videos', [])
+            if not videos:
+                st.info('No videos returned for this search.')
+            for video in videos:
+                st.markdown('**' + video['title'] + '**')
+                st.caption(video['channel'] + ' · ' + video['published'])
+                st.link_button('Watch review', video['url'])
+            st.caption('Video listings are discovery results, not verified reviews or scored sentiment.')
 
 st.divider()
 with st.expander('How to add phones and real-world review evidence'):

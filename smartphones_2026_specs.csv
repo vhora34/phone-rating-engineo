@@ -1,0 +1,26 @@
+id,brand,model,release_month,os,processor,ram_gb,storage_gb,display_size_in,display_type,rear_camera,front_camera,battery_mah,charging_w,launch_price_inr,launch_price_usd
+1,Samsung,Galaxy S26,2026-02,Android 16,Exynos 2600,12,256,6.2,Dynamic AMOLED 2X,50MP + 12MP + 10MP,12MP,4300,25,84999,799
+2,Samsung,Galaxy S26+,2026-02,Android 16,Exynos 2600,12,256,6.7,Dynamic AMOLED 2X,50MP + 12MP + 10MP,12MP,4900,45,94999,999
+3,Samsung,Galaxy S26 Ultra,2026-02,Android 16,Snapdragon 8 Elite Gen 5,12,256,6.9,Dynamic AMOLED 2X,200MP + 50MP + 50MP + 10MP,12MP,5000,60,139999,1299
+4,Samsung,Galaxy Z Fold 8,2026-07,Android 17,Snapdragon 8 Elite Gen 5,12,256,7.6,Foldable Dynamic AMOLED 2X,50MP + 50MP + 10MP,10MP,4800,25,174999,1799
+5,Samsung,Galaxy Z Flip 8,2026-07,Android 17,Snapdragon 8 Elite Gen 5,12,256,6.9,Foldable Dynamic AMOLED 2X,50MP + 12MP,10MP,4300,25,114999,1099
+6,Apple,iPhone 18,2026-09,iOS 27,Apple A20,8,256,6.3,Super Retina XDR OLED,48MP + 48MP,18MP,4100,30,89900,799
+7,Apple,iPhone 18 Pro,2026-09,iOS 27,Apple A20 Pro,12,256,6.3,Super Retina XDR OLED,48MP + 48MP + 48MP,18MP,4350,35,164900,1199
+8,Apple,iPhone 18 Pro Max,2026-09,iOS 27,Apple A20 Pro,12,256,6.9,Super Retina XDR OLED,48MP + 48MP + 48MP,18MP,5391,35,179900,1399
+9,Google,Pixel 11,2026-08,Android 17,Google Tensor G6,12,256,6.3,OLED,48MP + 13MP + 10.8MP,10.5MP,4985,30,79999,799
+10,Google,Pixel 11 Pro,2026-08,Android 17,Google Tensor G6,12,256,6.3,LTPO OLED,50MP + 48MP + 48MP,42MP,4850,37,109999,999
+11,Google,Pixel 11 Pro XL,2026-08,Android 17,Google Tensor G6,12,256,6.8,LTPO OLED,50MP + 48MP + 48MP,42MP,5115,45,134999,1199
+12,Google,Pixel 11 Pro Fold,2026-08,Android 17,Google Tensor G6,16,512,8.0,Foldable OLED,48MP + 10.8MP + 10.5MP,10MP,4806,30,186999,1799
+13,Xiaomi,Xiaomi 17 Ultra,2026-03,Android 16,Snapdragon 8 Elite Gen 5,16,512,6.9,LTPO AMOLED,50MP + 200MP + 50MP,50MP,6000,90,139999,1299
+14,vivo,vivo X300 Ultra,2026-05,Android 16,Snapdragon 8 Elite Gen 5,16,512,6.82,LTPO AMOLED,200MP + 200MP + 50MP,50MP,6600,100,159999,1399
+15,OPPO,Find X9 Ultra,2026-04,Android 16,Snapdragon 8 Elite Gen 5,16,512,6.82,LTPO AMOLED,200MP + 200MP + 50MP + 50MP,50MP,7050,100,169999,1399
+16,OPPO,Find X10 Pro Max,2026-10,Android 17,Dimensity 9600,16,512,6.9,LTPO AMOLED,200MP + 200MP + 200MP,50MP,7500,120,199999,1599
+17,OnePlus,OnePlus 15,2026-01,Android 16,Snapdragon 8 Elite Gen 5,12,256,6.78,LTPO AMOLED,50MP + 50MP + 50MP,32MP,7300,120,72999,799
+18,Nothing,Nothing Phone (4a),2026-03,Android 16,Snapdragon 7s Gen 4,8,128,6.78,AMOLED,50MP + 50MP + 8MP,16MP,5080,50,34999,399
+19,Nothing,Nothing Phone (4a) Pro,2026-03,Android 16,Snapdragon 7 Gen 4,8,128,6.83,AMOLED,50MP + 50MP + 8MP,32MP,5400,50,46699,499
+20,Nothing,Nothing Phone (4b),2026-07,Android 16,Snapdragon 6 Gen 4,8,128,6.8,AMOLED,50MP + 8MP,16MP,5200,33,24999,299
+21,Motorola,Edge 70 Fusion,2026-03,Android 16,Snapdragon 7s Gen 4,8,128,6.8,AMOLED,50MP + 13MP,32MP,7000,68,26999,329
+22,Realme,Realme P4 Power,2026-01,Android 16,Dimensity 7400 Ultra,8,128,6.8,AMOLED,50MP + 8MP,16MP,10001,80,27999,329
+23,POCO,POCO X8 Pro,2026-03,Android 16,Dimensity 8500 Ultra,8,256,6.59,AMOLED,50MP + 8MP,20MP,6500,100,32999,379
+24,Infinix,Infinix GT 50 Pro,2026-06,Android 16,Dimensity 8450,12,256,6.78,AMOLED,108MP + 8MP,32MP,6000,68,29999,349
+25,vivo,vivo V80,2026-08,Android 16,Snapdragon 7 Gen 4,12,256,6.77,AMOLED,50MP + 50MP,50MP,6500,90,44999,499

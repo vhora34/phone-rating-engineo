@@ -1,0 +1,34 @@
+id,brand,model,release_month,os,processor,ram_gb,storage_gb,display_size_in,display_type,rear_camera,front_camera,battery_mah,charging_w,launch_price_inr,launch_price_usd
+1,Samsung,Galaxy S25,2025-01,Android 15 (One UI 7),Qualcomm Snapdragon 8 Elite,12,128/256/512,6.2,"Dynamic AMOLED 2X, 120Hz",50MP + 12MP + 10MP,12MP,4000,"25W wired, 15W wireless",80999,799
+2,Samsung,Galaxy S25+,2025-01,Android 15 (One UI 7),Qualcomm Snapdragon 8 Elite,12,256/512,6.7,"Dynamic AMOLED 2X, 120Hz",50MP + 12MP + 10MP,12MP,4900,"45W wired, 15W wireless",99999,999
+3,Samsung,Galaxy S25 Ultra,2025-01,Android 15 (One UI 7),Qualcomm Snapdragon 8 Elite,12/16,256/512/1024,6.9,"Dynamic AMOLED 2X, 120Hz",200MP + 50MP + 50MP + 10MP,12MP,5000,"45W wired, 15W wireless",129999,1299
+4,Samsung,Galaxy S25 Edge,2025-05,Android 15 (One UI 7),Qualcomm Snapdragon 8 Elite,12,256/512,6.7,"Dynamic AMOLED 2X, 120Hz",200MP + 12MP,12MP,3900,"25W wired, 15W wireless",109999,1099
+5,Samsung,Galaxy Z Fold 7,2025-07,Android 16 (One UI 8),Qualcomm Snapdragon 8 Elite,12/16,256/512/1024,8.0,"Foldable Dynamic AMOLED 2X, 120Hz",200MP + 12MP + 10MP,10MP + 4MP,4400,"25W wired, 15W wireless",174999,1899
+6,Samsung,Galaxy Z Flip 7,2025-07,Android 16 (One UI 8),Samsung Exynos 2500,12,256/512,6.9,"Foldable Dynamic AMOLED 2X, 120Hz",50MP + 12MP,10MP,4300,"25W wired, 15W wireless",109999,1099
+7,Samsung,Galaxy S25 FE,2025-09,Android 16 (One UI 8),Samsung Exynos 2400,8,128/256,6.7,"Dynamic AMOLED 2X, 120Hz",50MP + 12MP + 8MP,12MP,4900,"45W wired, 15W wireless",59999,649
+8,Apple,iPhone 16e,2025-02,iOS 18,Apple A18,8,128/256/512,6.1,"Super Retina XDR OLED, 60Hz",48MP,12MP,4005,"20W wired, 7.5W wireless",59900,599
+9,Apple,iPhone 17,2025-09,iOS 26,Apple A19,8,256/512,6.3,"Super Retina XDR OLED, 120Hz",48MP + 48MP,18MP,3692,"40W wired, 25W MagSafe",82900,799
+10,Apple,iPhone Air,2025-09,iOS 26,Apple A19 Pro,12,256/512/1024,6.5,"Super Retina XDR OLED, 120Hz",48MP,18MP,3149,"30W wired, 20W MagSafe",119900,999
+11,Apple,iPhone 17 Pro,2025-09,iOS 26,Apple A19 Pro,12,256/512/1024,6.3,"Super Retina XDR OLED, 120Hz",48MP + 48MP + 48MP,18MP,3988,"40W wired, 25W MagSafe",134900,1099
+12,Apple,iPhone 17 Pro Max,2025-09,iOS 26,Apple A19 Pro,12,256/512/1024/2048,6.9,"Super Retina XDR OLED, 120Hz",48MP + 48MP + 48MP,18MP,4832,"40W wired, 25W MagSafe",149900,1199
+13,Google,Pixel 9a,2025-03,Android 15,Google Tensor G4,8,128/256,6.3,"P-OLED, 120Hz",48MP + 13MP,13MP,5100,"23W wired, 7.5W wireless",49999,499
+14,Google,Pixel 10,2025-08,Android 16,Google Tensor G5,12,128/256,6.3,"OLED, 120Hz",48MP + 13MP + 10.8MP,10.5MP,4970,"30W wired, 15W wireless",79999,799
+15,Google,Pixel 10 Pro,2025-08,Android 16,Google Tensor G5,16,128/256/512/1024,6.3,"LTPO OLED, 120Hz",50MP + 48MP + 48MP,42MP,4870,"30W wired, 15W wireless",109999,999
+16,Google,Pixel 10 Pro XL,2025-08,Android 16,Google Tensor G5,16,256/512/1024,6.8,"LTPO OLED, 120Hz",50MP + 48MP + 48MP,42MP,5200,"45W wired, 25W wireless",124999,1199
+17,Google,Pixel 10 Pro Fold,2025-08,Android 16,Google Tensor G5,16,256/512/1024,8.0,"Foldable LTPO OLED, 120Hz",48MP + 10.5MP + 10.8MP,10MP + 10MP,5015,"30W wired, 15W wireless",172999,1799
+18,OnePlus,OnePlus 13,2025-01,Android 15 (OxygenOS 15),Qualcomm Snapdragon 8 Elite,12/16/24,256/512/1024,6.82,"LTPO AMOLED, 120Hz",50MP + 50MP + 50MP,32MP,6000,"100W wired, 50W wireless",69999,899
+19,OnePlus,OnePlus 13R,2025-01,Android 15 (OxygenOS 15),Qualcomm Snapdragon 8 Gen 3,12/16,256/512,6.78,"LTPO AMOLED, 120Hz",50MP + 50MP + 8MP,16MP,6000,80W wired,42999,599
+20,OnePlus,OnePlus 13s,2025-06,Android 15 (OxygenOS 15),Qualcomm Snapdragon 8 Elite,12,256/512,6.32,"LTPO AMOLED, 120Hz",50MP + 50MP,32MP,5850,80W wired,54999,649
+21,OnePlus,OnePlus Nord 5,2025-07,Android 15 (OxygenOS 15),Qualcomm Snapdragon 8s Gen 3,8/12,256/512,6.83,"AMOLED, 144Hz",50MP + 8MP,50MP,6800,80W wired,31999,449
+22,OnePlus,OnePlus 15,2025-11,Android 16 (OxygenOS 16),Qualcomm Snapdragon 8 Elite Gen 5,12/16,256/512/1024,6.78,"LTPO AMOLED, 165Hz",50MP + 50MP + 50MP,32MP,7300,"120W wired, 50W wireless",72999,899
+23,Xiaomi,Xiaomi 15,2025-03,Android 15 (HyperOS 2),Qualcomm Snapdragon 8 Elite,12/16,256/512,6.36,"LTPO OLED, 120Hz",50MP + 50MP + 50MP,32MP,5240,"90W wired, 50W wireless",64999,999
+24,Xiaomi,Xiaomi 15 Ultra,2025-03,Android 15 (HyperOS 2),Qualcomm Snapdragon 8 Elite,16,512/1024,6.73,"LTPO AMOLED, 120Hz",50MP + 200MP + 50MP + 50MP,32MP,5410,"90W wired, 80W wireless",109999,1499
+25,Nothing,Nothing Phone (3a),2025-03,Android 15 (Nothing OS 3.1),Qualcomm Snapdragon 7s Gen 3,8/12,128/256,6.77,"AMOLED, 120Hz",50MP + 50MP + 8MP,32MP,5000,50W wired,24999,379
+26,Nothing,Nothing Phone (3a) Pro,2025-03,Android 15 (Nothing OS 3.1),Qualcomm Snapdragon 7s Gen 3,8/12,128/256,6.77,"AMOLED, 120Hz",50MP + 50MP + 8MP,50MP,5000,50W wired,29999,459
+27,Nothing,Nothing Phone (3),2025-07,Android 15 (Nothing OS 3.5),Qualcomm Snapdragon 8s Gen 4,12/16,256/512,6.67,"LTPO AMOLED, 120Hz",50MP + 50MP + 50MP,50MP,5150,"65W wired, 15W wireless",79999,799
+28,iQOO,iQOO 13,2025-01,Android 15 (Funtouch OS 15),Qualcomm Snapdragon 8 Elite,12/16,256/512,6.82,"LTPO AMOLED, 144Hz",50MP + 50MP + 50MP,32MP,6000,120W wired,54999,649
+29,OPPO,OPPO Find X9 Pro,2025-10,Android 16 (ColorOS 16),MediaTek Dimensity 9500,12/16,256/512/1024,6.78,"LTPO AMOLED, 120Hz",50MP + 200MP + 50MP,50MP,7500,"80W wired, 50W wireless",99999,1099
+30,vivo,vivo X300 Pro,2025-10,Android 16 (OriginOS 6),MediaTek Dimensity 9500,12/16,256/512/1024,6.78,"LTPO AMOLED, 120Hz",50MP + 200MP + 50MP,50MP,6510,"90W wired, 40W wireless",94999,1049
+31,Motorola,Motorola Edge 60 Pro,2025-04,Android 15 (Hello UI),MediaTek Dimensity 8350 Extreme,8/12,256/512,6.7,"P-OLED, 120Hz",50MP + 50MP + 10MP,50MP,6000,"90W wired, 15W wireless",29999,499
+32,Motorola,Motorola Razr 60 Ultra,2025-04,Android 15 (Hello UI),Qualcomm Snapdragon 8 Elite,16,512/1024,7.0,"Foldable LTPO AMOLED, 165Hz",50MP + 50MP,50MP,4700,"68W wired, 30W wireless",99999,1299
+33,Realme,Realme 14 Pro+,2025-01,Android 15 (Realme UI 6.0),Qualcomm Snapdragon 7s Gen 3,8/12,128/256/512,6.83,"OLED, 120Hz",50MP + 50MP + 8MP,32MP,6000,80W wired,29999,399
